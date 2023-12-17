@@ -1,0 +1,526 @@
+{
+	"info": {
+		"_postman_id": "4da7b3ab-3453-4d16-86db-77f0761f7586",
+		"name": "photoEditorApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16570847"
+	},
+	"item": [
+		{
+			"name": "crop image uploadded file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa/Pictures/testimage2.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/photo/crop?w=50&h=50&x=20&y=30",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"photo",
+						"crop"
+					],
+					"query": [
+						{
+							"key": "w",
+							"value": "50",
+							"description": "width // required"
+						},
+						{
+							"key": "h",
+							"value": "50",
+							"description": "height // required"
+						},
+						{
+							"key": "x",
+							"value": "20",
+							"description": "x coordonaite for top-left corner //optional"
+						},
+						{
+							"key": "y",
+							"value": "30",
+							"description": "y coordonaite for top-left corner //optional"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "crop image url",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"value": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+							"description": "required // could be uploaded file or url",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/photo/crop?w=100&h=100",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"photo",
+						"crop"
+					],
+					"query": [
+						{
+							"key": "w",
+							"value": "100",
+							"description": "width // required"
+						},
+						{
+							"key": "h",
+							"value": "100",
+							"description": "height // required"
+						},
+						{
+							"key": "x",
+							"value": null,
+							"description": "x coordonaite for top-left corner //optional",
+							"disabled": true
+						},
+						{
+							"key": "y",
+							"value": null,
+							"description": "x coordonaite for top-left corner //optional",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resize image uploaded file px",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa/Pictures/testimage3.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/photo/resize?w=50&h",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"photo",
+						"resize"
+					],
+					"query": [
+						{
+							"key": "w",
+							"value": "50",
+							"description": "width // required // digits or percentage"
+						},
+						{
+							"key": "h",
+							"value": null,
+							"description": "hieght // optional // digits or percentage"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "contrast image uploaded file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa.karkoura1/Pictures/006.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/photo/contrast?level=50",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"photo",
+						"contrast"
+					],
+					"query": [
+						{
+							"key": "level",
+							"value": "50",
+							"description": "level to contrast //required // digits between -100,+100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change image brightness",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa/Pictures/testimage1.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/photo/bright?level=-50",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"photo",
+						"bright"
+					],
+					"query": [
+						{
+							"key": "level",
+							"value": "-50",
+							"description": "level to brightness//required // digits between -100,+100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change image opacity",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa/Pictures/testimage6.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/photo/opacity?tl=50",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"photo",
+						"opacity"
+					],
+					"query": [
+						{
+							"key": "tl",
+							"value": "50",
+							"description": " tl transparency level is required and must be digit between  0 for full transparency and  ,100 for opaque "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sharpen image with an amount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa/Pictures/testimage8.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/photo/sharp?amount=50",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"photo",
+						"sharp"
+					],
+					"query": [
+						{
+							"key": "amount",
+							"value": "50",
+							"description": "amount // optional but must be digit between 0 ,100 "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "rotate image by angle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa/Pictures/testimage3.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/photo/rotate?angle=100&bgcolor=rgb(0,0,0)",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"photo",
+						"rotate"
+					],
+					"query": [
+						{
+							"key": "angle",
+							"value": "100",
+							"description": "angle // required and must be digit between -360 ,+360"
+						},
+						{
+							"key": "bgcolor",
+							"value": "rgb(0,0,0)",
+							"description": " bgcolor is optional but must be rgb color format"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "change image saturation",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa/Pictures/4.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/photo/saturate?level=150",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"photo",
+						"saturate"
+					],
+					"query": [
+						{
+							"key": "level",
+							"value": "150",
+							"description": "level// required and must be digit between 0 ,200 100 keep saturation value without change\n0 reduce the saturation 100% get grayscale\n\n200 increase the  saturation 100%"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add 3d effect to image",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa/Pictures/4.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/photo/3deffect?gray=0&azimuth=60&elev=10",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"photo",
+						"3deffect"
+					],
+					"query": [
+						{
+							"key": "gray",
+							"value": "0",
+							"description": "gray // optional and must be true or false default value gray=false"
+						},
+						{
+							"key": "azimuth",
+							"value": "60",
+							"description": "azimuth //optional // measured in degrees off the x axis \nshould be angle between -360, 360//default value = 45"
+						},
+						{
+							"key": "elev",
+							"value": "10",
+							"description": "elevation // optional //measured in pixels above the Z axis should be positive number //default value = 20"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "flip image uploaded file",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa/Pictures/testimage4.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/photo/flip?mode=v",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"photo",
+						"flip"
+					],
+					"query": [
+						{
+							"key": "mode",
+							"value": "v",
+							"description": "mode // optional // value must be v or h"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "invert image color",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "image",
+							"description": "required // could be uploaded file or url",
+							"type": "file",
+							"src": "/C:/Users/safaa/Pictures/testimage3.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{BASE_URL}}/api/photo/invertcolor",
+					"host": [
+						"{{BASE_URL}}"
+					],
+					"path": [
+						"api",
+						"photo",
+						"invertcolor"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "BASE_URL",
+			"value": "http://localhost:8000",
+			"type": "string"
+		}
+	]
+}
